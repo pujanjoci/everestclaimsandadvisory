@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -9,21 +9,22 @@ import './index.css';
 
 function App() {
   return (
-    <div className="relative min-h-screen flex flex-col">
-      {/* Add visual background */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-gray-100 via-white to-gray-200" />
+    <BrowserRouter basename="/everestclaimsandadvisor">
+      <div className="relative min-h-screen flex flex-col">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-gray-100 via-white to-gray-200" />
 
-      <Navbar />
-      <main className="flex-grow">
-        <Routes basename="/everestclaimsandadvisor">
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/more" element={<More />} />
-        </Routes>
-      </main>
-      <Footer />
-    </div>
+        <Navbar />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/more" element={<More />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
