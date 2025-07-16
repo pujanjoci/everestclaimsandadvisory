@@ -6,6 +6,7 @@ import Contact from './pages/Contact';
 import More from './pages/More';
 import Footer from './components/Footer';
 import './index.css';
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -15,10 +16,12 @@ function App() {
       <Navbar />
       <main className="flex-grow">
         <Routes>
+          <ScrollToTop />
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/more" element={<More />} />
+          
         </Routes>
       </main>
       <Footer />
