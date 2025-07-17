@@ -14,16 +14,17 @@ function App() {
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-gray-100 via-white to-gray-200" />
 
       <Navbar />
+      <ScrollToTop /> {/* ✅ Moved here */}
+
       <main className="flex-grow">
         <Routes>
-          <ScrollToTop />
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/more" element={<More />} />
-          
         </Routes>
       </main>
+
       <Footer />
     </div>
   );
